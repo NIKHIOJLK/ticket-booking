@@ -1,0 +1,23 @@
+# Secrets (copy .env.example to .env)
+.env
+
+# Java / Maven
+backend/target/
+backend/HELP.md
+backend/outbox/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDEs
+.classpath
+.project
+.settings/
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

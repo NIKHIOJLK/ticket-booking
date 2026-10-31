@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+.page {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.auth-card {
+  max-width: 360px;
+  margin: 80px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #4a5cf0;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #3a49d0;
+}
+
+.error-text {
+  color: #d33;
+  font-size: 13px;
+}
+
+.success-text {
+  color: #2a8;
+  font-size: 14px;
+}
+
+.switch-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 16px;
+  color: #666;
+}
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+}
+
+.event-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.event-card p {
+  margin: 4px 0 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.seat-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.seat-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.seat-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.seat-btn.available {
+  background: #4caf50;
+}
+
+.seat-btn.booked {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+}
+
+.logout-btn:hover {
+  background: #eee;
+}
