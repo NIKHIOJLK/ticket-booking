@@ -42,7 +42,8 @@ class TaskQueueTest extends IntegrationTest {
         assertThat(jdbc.queryForObject("SELECT payload->>'bookingId' FROM jobs", String.class)).isEqualTo("7");
         assertThat(jdbc.queryForObject("SELECT run_at > now() + interval '4 hours' FROM jobs", Boolean.class)).isTrue();
 
-        assertThat(tx.execute(s -> taskQueue.cancel(TaskQueue.BOOKING_EMAILS, "reminder:7", "test"))).isEqualTo(1);
+        Integer cancelled = tx.execute(s -> taskQueue.cancel(TaskQueue.BOOKING_EMAILS, "reminder:7", "test"));
+        assertThat(cancelled).isEqualTo(1);
         assertThat(jobs()).containsExactly("send-reminder:cancelled");
         // Conveyor's timeline for the job records why.
         assertThat(jdbc.queryForList("SELECT type FROM job_events ORDER BY id", String.class))

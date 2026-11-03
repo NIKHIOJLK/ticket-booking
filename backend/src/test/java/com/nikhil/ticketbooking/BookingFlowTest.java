@@ -213,7 +213,8 @@ class BookingFlowTest extends IntegrationTest {
 
         List<Object> mine = get("/api/bookings/me", user).list();
         assertThat(mine).hasSize(2);
-        assertThat(mine).extracting(o -> ((Map<?, ?>) o).get("status")).containsExactlyInAnyOrder("CONFIRMED", "CANCELLED");
+        assertThat(mine).extracting(o -> String.valueOf(((Map<?, ?>) o).get("status")))
+                .containsExactlyInAnyOrder("CONFIRMED", "CANCELLED");
     }
 
     @Test
