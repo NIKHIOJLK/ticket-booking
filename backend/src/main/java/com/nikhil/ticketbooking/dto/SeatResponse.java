@@ -1,17 +1,14 @@
 package com.nikhil.ticketbooking.dto;
 
-public class SeatResponse {
-    private Long id;
-    private String seatLabel;
-    private boolean booked;
+import java.time.LocalDateTime;
 
-    public SeatResponse(Long id, String seatLabel, boolean booked) {
-        this.id = id;
-        this.seatLabel = seatLabel;
-        this.booked = booked;
-    }
-
-    public Long getId() { return id; }
-    public String getSeatLabel() { return seatLabel; }
-    public boolean isBooked() { return booked; }
+/**
+ * @param status        AVAILABLE, HELD (someone is paying for it) or BOOKED
+ * @param booked        true unless AVAILABLE (kept for older clients)
+ * @param mine          the seat is held or booked by the person asking
+ * @param bookingId     only for your own seats
+ * @param holdExpiresAt only for your own held seats
+ */
+public record SeatResponse(Long id, String seatLabel, String status, boolean booked, boolean mine,
+                           Long bookingId, LocalDateTime holdExpiresAt) {
 }

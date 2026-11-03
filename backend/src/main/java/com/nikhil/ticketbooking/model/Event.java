@@ -1,6 +1,7 @@
 package com.nikhil.ticketbooking.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,6 +18,10 @@ public class Event {
     @Column(name = "event_date")
     private LocalDateTime eventDate;
 
+    /** Price of one ticket, in rupees. */
+    @Column(precision = 10, scale = 2)
+    private BigDecimal price;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -32,6 +37,9 @@ public class Event {
 
     public LocalDateTime getEventDate() { return eventDate; }
     public void setEventDate(LocalDateTime eventDate) { this.eventDate = eventDate; }
+
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }

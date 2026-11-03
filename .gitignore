@@ -21,3 +21,7 @@ frontend/dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Created by scripts/setup.ps1 and the running app
+logs/
+backups/
